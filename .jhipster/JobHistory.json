@@ -1,0 +1,51 @@
+{
+  "name": "JobHistory",
+  "fields": [
+    {
+      "fieldName": "employer",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "250"
+    },
+    {
+      "fieldName": "jobTitle",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "250"
+    },
+    {
+      "fieldName": "startYear",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["max", "min", "required"],
+      "fieldValidateRulesMax": "2020",
+      "fieldValidateRulesMin": "1950"
+    },
+    {
+      "fieldName": "endYear",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["max", "min"],
+      "fieldValidateRulesMax": "2050",
+      "fieldValidateRulesMin": "1950"
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "employer",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201026161921",
+  "entityTableName": "job_history",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -50,6 +50,11 @@ public class CacheConfiguration {
             createCache(cm, uz.soliq.anketa.domain.User.class.getName() + ".authorities");
             createCache(cm, uz.soliq.anketa.domain.PersistentToken.class.getName());
             createCache(cm, uz.soliq.anketa.domain.User.class.getName() + ".persistentTokens");
+            createCache(cm, uz.soliq.anketa.domain.Employee.class.getName());
+            createCache(cm, uz.soliq.anketa.domain.Employee.class.getName() + ".employers");
+            createCache(cm, uz.soliq.anketa.domain.Employee.class.getName() + ".universities");
+            createCache(cm, uz.soliq.anketa.domain.JobHistory.class.getName());
+            createCache(cm, uz.soliq.anketa.domain.AcademicDegree.class.getName());
             // jhipster-needle-ehcache-add-entry
         };
     }

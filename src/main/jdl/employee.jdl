@@ -1,0 +1,40 @@
+
+entity Employee {
+	fullName String maxlength(250) required,
+	email String,
+	phoneNumber String,
+	birthday LocalDate required,
+	nation String required,
+	photo ImageBlob maxbytes(1024000)
+}
+
+entity JobHistory {
+	employer String maxlength(250) required,
+    jobTitle String maxlength(250) required,
+	startYear Integer max(2020) min(1950) required,
+	endYear Integer max(2050) min(1950)
+}
+
+entity AcademicDegree {
+	institutionName String maxlength(250) required,
+    discipline String maxlength(250) required,
+	startYear Integer max(2050) min(1950) required,
+	endYear Integer max(2050) min(1950),
+    obtainedDegree Degree required
+}
+
+enum Degree {
+    ORTA, ORTAMAXSUS, OLIY
+}
+
+relationship OneToMany {
+	Employee{employer} to JobHistory
+    Employee{university} to AcademicDegree
+}
+
+paginate Employee with infinite-scroll
+paginate JobHistory, AcademicDegree with pagination
+
+dto * with mapstruct
+
+service all with serviceImpl

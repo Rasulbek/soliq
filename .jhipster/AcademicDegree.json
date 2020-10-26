@@ -1,0 +1,57 @@
+{
+  "name": "AcademicDegree",
+  "fields": [
+    {
+      "fieldName": "institutionName",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "250"
+    },
+    {
+      "fieldName": "discipline",
+      "fieldType": "String",
+      "fieldValidateRules": ["maxlength", "required"],
+      "fieldValidateRulesMaxlength": "250"
+    },
+    {
+      "fieldName": "startYear",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["max", "min", "required"],
+      "fieldValidateRulesMax": "2050",
+      "fieldValidateRulesMin": "1950"
+    },
+    {
+      "fieldName": "endYear",
+      "fieldType": "Integer",
+      "fieldValidateRules": ["max", "min"],
+      "fieldValidateRulesMax": "2050",
+      "fieldValidateRulesMin": "1950"
+    },
+    {
+      "fieldName": "obtainedDegree",
+      "fieldType": "Degree",
+      "fieldValues": "ORTA,ORTAMAXSUS,OLIY",
+      "fieldValidateRules": ["required"]
+    }
+  ],
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "otherEntityName": "employee",
+      "otherEntityRelationshipName": "university",
+      "relationshipName": "employee",
+      "otherEntityField": "id"
+    }
+  ],
+  "changelogDate": "20201026162021",
+  "entityTableName": "academic_degree",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceImpl",
+  "jpaMetamodelFiltering": false,
+  "fluentMethods": true,
+  "readOnly": false,
+  "embedded": false,
+  "clientRootFolder": "",
+  "applications": "*"
+}

@@ -1,0 +1,27 @@
+{
+  "soliqApp": {
+    "academicDegree": {
+      "home": {
+        "title": "Academic Degrees",
+        "createLabel": "Создать новый Academic Degree",
+        "createOrEditLabel": "Создать или отредактировать Academic Degree",
+        "notFound": "No Academic Degrees found"
+      },
+      "created": "Новый Academic Degree создан с идентификатором {{ param }}",
+      "updated": "Academic Degree обновлен с идентификатором {{ param }}",
+      "deleted": "Academic Degree удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Academic Degree {{ id }}?"
+      },
+      "detail": {
+        "title": "Academic Degree"
+      },
+      "institutionName": "Institution Name",
+      "discipline": "Discipline",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "obtainedDegree": "Obtained Degree",
+      "employee": "Employee"
+    }
+  }
+}

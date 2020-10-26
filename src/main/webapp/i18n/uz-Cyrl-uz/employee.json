@@ -1,0 +1,29 @@
+{
+  "soliqApp": {
+    "employee": {
+      "home": {
+        "title": "Employees",
+        "createLabel": "Янги Employee қўшиш",
+        "createOrEditLabel": "Employeeни таҳрирлаш",
+        "notFound": "No Employees found"
+      },
+      "created": "Employee {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Employee сақланди.",
+      "deleted": "{{ param }}- Employee ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Employeeни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Employee"
+      },
+      "fullName": "Full Name",
+      "email": "Email",
+      "phoneNumber": "Phone Number",
+      "birthday": "Birthday",
+      "nation": "Nation",
+      "photo": "Photo",
+      "employer": "Employer",
+      "university": "University"
+    }
+  }
+}

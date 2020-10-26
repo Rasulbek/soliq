@@ -1,0 +1,52 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="academicDegree">
+            <h2><span jhiTranslate="soliqApp.academicDegree.detail.title">Academic Degree</span> {{ academicDegree.id }}</h2>
+
+            <hr>
+
+            <jhi-alert-error></jhi-alert-error>
+
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="soliqApp.academicDegree.institutionName">Institution Name</span></dt>
+                <dd>
+                    <span>{{ academicDegree.institutionName }}</span>
+                </dd>
+                <dt><span jhiTranslate="soliqApp.academicDegree.discipline">Discipline</span></dt>
+                <dd>
+                    <span>{{ academicDegree.discipline }}</span>
+                </dd>
+                <dt><span jhiTranslate="soliqApp.academicDegree.startYear">Start Year</span></dt>
+                <dd>
+                    <span>{{ academicDegree.startYear }}</span>
+                </dd>
+                <dt><span jhiTranslate="soliqApp.academicDegree.endYear">End Year</span></dt>
+                <dd>
+                    <span>{{ academicDegree.endYear }}</span>
+                </dd>
+                <dt><span jhiTranslate="soliqApp.academicDegree.obtainedDegree">Obtained Degree</span></dt>
+                <dd>
+                    <span jhiTranslate="{{ 'soliqApp.Degree.' + academicDegree.obtainedDegree }}">{{ academicDegree.obtainedDegree }}</span>
+                </dd>
+                <dt><span jhiTranslate="soliqApp.academicDegree.employee">Employee</span></dt>
+                <dd>
+                    <div *ngIf="academicDegree.employeeId">
+                        <a [routerLink]="['/employee', academicDegree.employeeId, 'view']">{{ academicDegree.employeeId }}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/academic-degree', academicDegree.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

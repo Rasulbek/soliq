@@ -1,0 +1,27 @@
+{
+  "soliqApp": {
+    "academicDegree": {
+      "home": {
+        "title": "Academic Degrees",
+        "createLabel": "Янги Academic Degree қўшиш",
+        "createOrEditLabel": "Academic Degreeни таҳрирлаш",
+        "notFound": "No Academic Degrees found"
+      },
+      "created": "Academic Degree {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Academic Degree сақланди.",
+      "deleted": "{{ param }}- Academic Degree ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Academic Degreeни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Academic Degree"
+      },
+      "institutionName": "Institution Name",
+      "discipline": "Discipline",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "obtainedDegree": "Obtained Degree",
+      "employee": "Employee"
+    }
+  }
+}

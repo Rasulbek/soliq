@@ -1,0 +1,26 @@
+{
+  "soliqApp": {
+    "jobHistory": {
+      "home": {
+        "title": "Job Histories",
+        "createLabel": "Создать новый Job History",
+        "createOrEditLabel": "Создать или отредактировать Job History",
+        "notFound": "No Job Histories found"
+      },
+      "created": "Новый Job History создан с идентификатором {{ param }}",
+      "updated": "Job History обновлен с идентификатором {{ param }}",
+      "deleted": "Job History удален с идентификатором {{ param }}",
+      "delete": {
+        "question": "Вы уверены что хотите удалить Job History {{ id }}?"
+      },
+      "detail": {
+        "title": "Job History"
+      },
+      "employer": "Employer",
+      "jobTitle": "Job Title",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "employee": "Employee"
+    }
+  }
+}

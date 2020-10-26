@@ -1,0 +1,26 @@
+{
+  "soliqApp": {
+    "jobHistory": {
+      "home": {
+        "title": "Job Histories",
+        "createLabel": "Янги Job History қўшиш",
+        "createOrEditLabel": "Job Historyни таҳрирлаш",
+        "notFound": "No Job Histories found"
+      },
+      "created": "Job History {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Job History сақланди.",
+      "deleted": "{{ param }}- Job History ўчирилди.",
+      "delete": {
+        "question": "{{ id }}- Job Historyни ўчирмоқчимисиз? "
+      },
+      "detail": {
+        "title": "Job History"
+      },
+      "employer": "Employer",
+      "jobTitle": "Job Title",
+      "startYear": "Start Year",
+      "endYear": "End Year",
+      "employee": "Employee"
+    }
+  }
+}
