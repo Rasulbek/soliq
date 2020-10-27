@@ -8,10 +8,12 @@ import { Authority } from 'app/shared/constants/authority.constants';
 import { UserRouteAccessService } from 'app/core/auth/user-route-access-service';
 import { IJobHistory, JobHistory } from 'app/shared/model/job-history.model';
 import { JobHistoryService } from './job-history.service';
+import { EmployeeService } from '../employee/employee.service';
 import { JobHistoryComponent } from './job-history.component';
 import { JobHistoryDetailComponent } from './job-history-detail.component';
 import { JobHistoryUpdateComponent } from './job-history-update.component';
 import { AcademicDegree } from '../../shared/model/academic-degree.model';
+import { Employee } from '../../shared/model/employee.model';
 
 @Injectable({ providedIn: 'root' })
 export class JobHistoryResolve implements Resolve<IJobHistory> {
@@ -33,7 +35,7 @@ export class JobHistoryResolve implements Resolve<IJobHistory> {
     }
     const empid = route.params['empid'];
     if (empid) {
-      return of(new JobHistory(undefined, undefined, undefined, undefined, undefined, empid));
+      return of(new JobHistory(undefined, undefined, undefined, undefined, undefined, empid, undefined));
     }
     return of(new JobHistory());
   }

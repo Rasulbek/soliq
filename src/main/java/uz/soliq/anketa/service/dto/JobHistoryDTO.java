@@ -7,7 +7,7 @@ import java.io.Serializable;
  * A DTO for the {@link uz.soliq.anketa.domain.JobHistory} entity.
  */
 public class JobHistoryDTO implements Serializable {
-    
+
     private Long id;
 
     @NotNull
@@ -27,9 +27,10 @@ public class JobHistoryDTO implements Serializable {
     @Max(value = 2050)
     private Integer endYear;
 
-
     private Long employeeId;
-    
+
+    private String employeeName;
+
     public Long getId() {
         return id;
     }
@@ -78,6 +79,14 @@ public class JobHistoryDTO implements Serializable {
         this.employeeId = employeeId;
     }
 
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -105,6 +114,7 @@ public class JobHistoryDTO implements Serializable {
             ", startYear=" + getStartYear() +
             ", endYear=" + getEndYear() +
             ", employeeId=" + getEmployeeId() +
+            ", employeeName=" + getEmployeeName() +
             "}";
     }
 }

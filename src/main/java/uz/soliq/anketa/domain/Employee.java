@@ -1,11 +1,8 @@
 package uz.soliq.anketa.domain;
 
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
-
 import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
 import java.time.LocalDate;
 import java.util.HashSet;
@@ -16,7 +13,6 @@ import java.util.Set;
  */
 @Entity
 @Table(name = "employee")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class Employee implements Serializable {
 
     private static final long serialVersionUID = 1L;
@@ -54,11 +50,9 @@ public class Employee implements Serializable {
     private String photoContentType;
 
     @OneToMany(mappedBy = "employee", cascade = {CascadeType.ALL})
-    @Cache(usage = CacheConcurrencyStrategy.NONE)
     private Set<JobHistory> employers = new HashSet<>();
 
     @OneToMany(mappedBy = "employee", cascade = {CascadeType.ALL})
-    @Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
     private Set<AcademicDegree> universities = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

@@ -8,7 +8,7 @@ import uz.soliq.anketa.domain.enumeration.Degree;
  * A DTO for the {@link uz.soliq.anketa.domain.AcademicDegree} entity.
  */
 public class AcademicDegreeDTO implements Serializable {
-    
+
     private Long id;
 
     @NotNull
@@ -31,9 +31,10 @@ public class AcademicDegreeDTO implements Serializable {
     @NotNull
     private Degree obtainedDegree;
 
-
     private Long employeeId;
-    
+
+    private String employeeName;
+
     public Long getId() {
         return id;
     }
@@ -90,6 +91,14 @@ public class AcademicDegreeDTO implements Serializable {
         this.employeeId = employeeId;
     }
 
+    public String getEmployeeName() {
+        return employeeName;
+    }
+
+    public void setEmployeeName(String employeeName) {
+        this.employeeName = employeeName;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
@@ -118,6 +127,7 @@ public class AcademicDegreeDTO implements Serializable {
             ", endYear=" + getEndYear() +
             ", obtainedDegree='" + getObtainedDegree() + "'" +
             ", employeeId=" + getEmployeeId() +
+            ", employeeName=" + getEmployeeName() +
             "}";
     }
 }

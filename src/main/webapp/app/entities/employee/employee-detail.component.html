@@ -66,19 +66,18 @@
                     <td>{{ degree.startYear }} - {{ degree.endYear }}</td>
                     <td>{{ degree.institutionName }}</td>
                     <td>{{ degree.discipline }}</td>
-                    <td>{{ degree.obtainedDegree }}</td>
+                    <td>
+                        <span jhiTranslate="{{ 'soliqApp.Degree.' + degree.obtainedDegree }}">{{ degree.obtainedDegree }}</span>
                     <td>
                         <button type="submit"
                                 [routerLink]="['/academic-degree', degree.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon icon="pencil-alt"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
 
                         <button type="submit" (click)="delete(degree)"
                                 class="btn btn-danger btn-sm">
                             <fa-icon icon="times"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </td>
                 </tr>
@@ -87,6 +86,7 @@
                         <button type="submit"
                                 [routerLink]="['/academic-degree', employee.id, 'add']"
                                 class="btn btn-success">
+                            <fa-icon icon="plus"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="soliqApp.employee.add">Add</span>
                         </button>
                     </td>
@@ -111,13 +111,11 @@
                                 [routerLink]="['/job-history', jobHistory.id, 'edit']"
                                 class="btn btn-primary btn-sm">
                             <fa-icon icon="pencil-alt"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
                         </button>
 
                         <button type="submit" (click)="deleteJob(jobHistory)"
                                 class="btn btn-danger btn-sm">
                             <fa-icon icon="times"></fa-icon>
-                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
                         </button>
                     </td>
                 </tr>
@@ -126,6 +124,7 @@
                         <button type="submit"
                                 [routerLink]="['/job-history', employee.id, 'add']"
                                 class="btn btn-success">
+                            <fa-icon icon="plus"></fa-icon>
                             <span class="d-none d-md-inline" jhiTranslate="soliqApp.employee.add">Add</span>
                         </button>
                     </td>

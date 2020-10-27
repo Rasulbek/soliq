@@ -13,6 +13,7 @@ import org.mapstruct.*;
 public interface AcademicDegreeMapper extends EntityMapper<AcademicDegreeDTO, AcademicDegree> {
 
     @Mapping(source = "employee.id", target = "employeeId")
+    @Mapping(source = "employee.fullName", target = "employeeName")
     AcademicDegreeDTO toDto(AcademicDegree academicDegree);
 
     @Mapping(source = "employeeId", target = "employee")

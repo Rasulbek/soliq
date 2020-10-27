@@ -32,7 +32,7 @@ export class AcademicDegreeResolve implements Resolve<IAcademicDegree> {
     }
     const empid = route.params['empid'];
     if (empid) {
-      return of(new AcademicDegree(undefined, undefined, undefined, undefined, undefined, undefined, empid));
+      return of(new AcademicDegree(undefined, undefined, undefined, undefined, undefined, undefined, empid, undefined));
     }
     return of(new AcademicDegree());
   }

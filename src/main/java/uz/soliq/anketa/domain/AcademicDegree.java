@@ -1,22 +1,20 @@
 package uz.soliq.anketa.domain;
 
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import org.hibernate.annotations.Cache;
-import org.hibernate.annotations.CacheConcurrencyStrategy;
+import uz.soliq.anketa.domain.enumeration.Degree;
 
 import javax.persistence.*;
-import javax.validation.constraints.*;
-
+import javax.validation.constraints.Max;
+import javax.validation.constraints.Min;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.io.Serializable;
-
-import uz.soliq.anketa.domain.enumeration.Degree;
 
 /**
  * A AcademicDegree.
  */
 @Entity
 @Table(name = "academic_degree")
-@Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
 public class AcademicDegree implements Serializable {
 
     private static final long serialVersionUID = 1L;

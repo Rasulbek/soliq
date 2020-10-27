@@ -13,6 +13,7 @@ import org.mapstruct.*;
 public interface JobHistoryMapper extends EntityMapper<JobHistoryDTO, JobHistory> {
 
     @Mapping(source = "employee.id", target = "employeeId")
+    @Mapping(source = "employee.fullName", target = "employeeName")
     JobHistoryDTO toDto(JobHistory jobHistory);
 
     @Mapping(source = "employeeId", target = "employee")

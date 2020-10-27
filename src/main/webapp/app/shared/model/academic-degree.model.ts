@@ -8,6 +8,7 @@ export interface IAcademicDegree {
   endYear?: number;
   obtainedDegree?: Degree;
   employeeId?: number;
+  employeeName?: string;
 }
 
 export class AcademicDegree implements IAcademicDegree {
@@ -18,6 +19,7 @@ export class AcademicDegree implements IAcademicDegree {
     public startYear?: number,
     public endYear?: number,
     public obtainedDegree?: Degree,
-    public employeeId?: number
+    public employeeId?: number,
+    public employeeName?: string
   ) {}
 }

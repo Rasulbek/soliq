@@ -52,6 +52,7 @@ export class AcademicDegreeUpdateComponent implements OnInit {
       endYear: academicDegree.endYear,
       obtainedDegree: academicDegree.obtainedDegree,
       employeeId: academicDegree.employeeId,
+      employeeName: academicDegree.employeeName,
     });
   }
 

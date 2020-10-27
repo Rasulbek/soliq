@@ -5,6 +5,7 @@ export interface IJobHistory {
   startYear?: number;
   endYear?: number;
   employeeId?: number;
+  employeeName?: string;
 }
 
 export class JobHistory implements IJobHistory {
@@ -14,6 +15,7 @@ export class JobHistory implements IJobHistory {
     public jobTitle?: string,
     public startYear?: number,
     public endYear?: number,
-    public employeeId?: number
+    public employeeId?: number,
+    public employeeName?: string
   ) {}
 }

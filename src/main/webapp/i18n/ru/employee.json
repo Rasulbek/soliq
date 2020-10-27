@@ -2,29 +2,29 @@
   "soliqApp": {
     "employee": {
       "home": {
-        "title": "Employees",
-        "createLabel": "Создать новый Employee",
-        "createOrEditLabel": "Создать или отредактировать Employee",
-        "notFound": "No Employees found"
+        "title": "Сотрудники",
+        "createLabel": "Создать новый Сотрудник",
+        "createOrEditLabel": "Создать или отредактировать Сотрудник",
+        "notFound": "No Сотрудники found"
       },
-      "created": "Новый Employee создан с идентификатором {{ param }}",
-      "updated": "Employee обновлен с идентификатором {{ param }}",
-      "deleted": "Employee удален с идентификатором {{ param }}",
+      "created": "Новый Сотрудник создан с идентификатором {{ param }}",
+      "updated": "Сотрудник обновлен с идентификатором {{ param }}",
+      "deleted": "Сотрудник удален с идентификатором {{ param }}",
       "delete": {
-        "question": "Вы уверены что хотите удалить Employee {{ id }}?"
+        "question": "Вы уверены что хотите удалить Сотрудник {{ id }}?"
       },
       "detail": {
-        "title": "Employee"
+        "title": "Сотрудник"
       },
-      "fullName": "Full Name",
+      "fullName": "Полное имя",
       "email": "Email",
-      "phoneNumber": "Phone Number",
-      "birthday": "Birthday",
-      "nation": "Nation",
-      "photo": "Photo",
-      "employer": "Employer",
-      "university": "University",
-      "add": "+ Қўшиш"
+      "phoneNumber": "Телефон",
+      "birthday": "Дата рождение",
+      "nation": "Национальность",
+      "photo": "Фото",
+      "employer": "Работадатель",
+      "university": "Университет",
+      "add": "Добавит"
     }
   }
 }
