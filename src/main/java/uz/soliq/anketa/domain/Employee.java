@@ -45,7 +45,7 @@ public class Employee implements Serializable {
     @Column(name = "nation", nullable = false)
     private String nation;
 
-    
+
     @Lob
     @Column(name = "photo")
     private byte[] photo;
@@ -53,12 +53,12 @@ public class Employee implements Serializable {
     @Column(name = "photo_content_type")
     private String photoContentType;
 
-    @OneToMany(mappedBy = "employee")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @OneToMany(mappedBy = "employee", cascade = {CascadeType.ALL})
+    @Cache(usage = CacheConcurrencyStrategy.NONE)
     private Set<JobHistory> employers = new HashSet<>();
 
-    @OneToMany(mappedBy = "employee")
-    @Cache(usage = CacheConcurrencyStrategy.READ_WRITE)
+    @OneToMany(mappedBy = "employee", cascade = {CascadeType.ALL})
+    @Cache(usage = CacheConcurrencyStrategy.TRANSACTIONAL)
     private Set<AcademicDegree> universities = new HashSet<>();
 
     // jhipster-needle-entity-add-field - JHipster will add fields here

@@ -9,7 +9,7 @@ import org.mapstruct.*;
 /**
  * Mapper for the entity {@link Employee} and its DTO {@link EmployeeDTO}.
  */
-@Mapper(componentModel = "spring", uses = {})
+@Mapper(componentModel = "spring", uses = {AcademicDegreeMapper.class, JobHistoryMapper.class})
 public interface EmployeeMapper extends EntityMapper<EmployeeDTO, Employee> {
 
 
@@ -27,4 +27,23 @@ public interface EmployeeMapper extends EntityMapper<EmployeeDTO, Employee> {
         employee.setId(id);
         return employee;
     }
+
+    default AcademicDegree fromUniversityId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        AcademicDegree academicDegree = new AcademicDegree();
+        academicDegree.setId(id);
+        return academicDegree;
+    }
+
+    default JobHistory fromEmployeeId(Long id) {
+        if (id == null) {
+            return null;
+        }
+        JobHistory jobHistory = new JobHistory();
+        jobHistory.setId(id);
+        return jobHistory;
+    }
+
 }

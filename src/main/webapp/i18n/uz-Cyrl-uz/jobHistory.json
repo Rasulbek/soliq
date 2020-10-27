@@ -2,25 +2,25 @@
   "soliqApp": {
     "jobHistory": {
       "home": {
-        "title": "Job Histories",
-        "createLabel": "Янги Job History қўшиш",
-        "createOrEditLabel": "Job Historyни таҳрирлаш",
-        "notFound": "No Job Histories found"
+        "title": "Иш жойлари",
+        "createLabel": "Иш жойи қўшиш",
+        "createOrEditLabel": "Иш жойини таҳрирлаш",
+        "notFound": "Иш жойлари топилмади"
       },
-      "created": "Job History {{ param }} билан қўшилди.",
-      "updated": "{{ param }}- Job History сақланди.",
-      "deleted": "{{ param }}- Job History ўчирилди.",
+      "created": "Иш жойи {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- иш жойи сақланди.",
+      "deleted": "{{ param }}- иш жойи ўчирилди.",
       "delete": {
-        "question": "{{ id }}- Job Historyни ўчирмоқчимисиз? "
+        "question": "{{ id }}- Иш жойини ўчирмоқчимисиз? "
       },
       "detail": {
-        "title": "Job History"
+        "title": "Иш жойи"
       },
-      "employer": "Employer",
-      "jobTitle": "Job Title",
-      "startYear": "Start Year",
-      "endYear": "End Year",
-      "employee": "Employee"
+      "employer": "Иш берувчи",
+      "jobTitle": "Лавозими",
+      "startYear": "Иш бошлаган йили",
+      "endYear": "Бўшаган йили",
+      "employee": "Ходим"
     }
   }
 }

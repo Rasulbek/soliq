@@ -30,6 +30,10 @@ export class AcademicDegreeResolve implements Resolve<IAcademicDegree> {
         })
       );
     }
+    const empid = route.params['empid'];
+    if (empid) {
+      return of(new AcademicDegree(undefined, undefined, undefined, undefined, undefined, undefined, empid));
+    }
     return of(new AcademicDegree());
   }
 }
@@ -71,6 +75,18 @@ export const academicDegreeRoute: Routes = [
   },
   {
     path: ':id/edit',
+    component: AcademicDegreeUpdateComponent,
+    resolve: {
+      academicDegree: AcademicDegreeResolve,
+    },
+    data: {
+      authorities: [Authority.USER],
+      pageTitle: 'soliqApp.academicDegree.home.title',
+    },
+    canActivate: [UserRouteAccessService],
+  },
+  {
+    path: ':empid/add',
     component: AcademicDegreeUpdateComponent,
     resolve: {
       academicDegree: AcademicDegreeResolve,

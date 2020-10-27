@@ -1,55 +1,137 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="employee">
-            <h2><span jhiTranslate="soliqApp.employee.detail.title">Employee</span> {{ employee.id }}</h2>
+            <h2>
+                <button type="submit"
+                        (click)="previousState()"
+                        class="btn btn-info">
+                    <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+                </button>
+                <span class="text-right" jhiTranslate="soliqApp.employee.detail.title">Employee</span> №{{ employee.id }}
+            </h2>
 
             <hr>
 
             <jhi-alert-error></jhi-alert-error>
 
-            <dl class="row-md jh-entity-details">
-                <dt><span jhiTranslate="soliqApp.employee.fullName">Full Name</span></dt>
-                <dd>
-                    <span>{{ employee.fullName }}</span>
-                </dd>
-                <dt><span jhiTranslate="soliqApp.employee.email">Email</span></dt>
-                <dd>
-                    <span>{{ employee.email }}</span>
-                </dd>
-                <dt><span jhiTranslate="soliqApp.employee.phoneNumber">Phone Number</span></dt>
-                <dd>
-                    <span>{{ employee.phoneNumber }}</span>
-                </dd>
-                <dt><span jhiTranslate="soliqApp.employee.birthday">Birthday</span></dt>
-                <dd>
-                    <span>{{ employee.birthday }}</span>
-                </dd>
-                <dt><span jhiTranslate="soliqApp.employee.nation">Nation</span></dt>
-                <dd>
-                    <span>{{ employee.nation }}</span>
-                </dd>
-                <dt><span jhiTranslate="soliqApp.employee.photo">Photo</span></dt>
-                <dd>
-                    <div *ngIf="employee.photo">
-                        <a (click)="openFile(employee.photoContentType, employee.photo)">
-                            <img [src]="'data:' + employee.photoContentType + ';base64,' + employee.photo" style="max-width: 100%;" alt="employee image"/>
-                        </a>
-                        {{ employee.photoContentType }}, {{ byteSize(employee.photo) }}
-                    </div>
-                </dd>
-            </dl>
+            <table class="table table-striped">
+                <tr>
+                    <td rowspan="7">
+                        <div *ngIf="employee.photo">
+                            <a (click)="openFile(employee.photoContentType, employee.photo)">
+                                <img [src]="'data:' + employee.photoContentType + ';base64,' + employee.photo" style="max-width: 200px;" alt="employee image"/>
+                            </a>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td><span jhiTranslate="soliqApp.employee.fullName">Full Name</span></td>
+                    <td><span>{{ employee.fullName }}</span></td>
+                </tr>
+                <tr>
+                    <td><span jhiTranslate="soliqApp.employee.birthday">Birthday</span></td>
+                    <td><span>{{ employee.birthday | date }}</span></td>
+                </tr>
+                <tr>
+                    <td><span jhiTranslate="soliqApp.employee.nation">Nation</span></td>
+                    <td><span>{{ employee.nation }}</span></td>
+                </tr>
+                <tr>
+                    <td><span jhiTranslate="soliqApp.employee.phoneNumber">Phone Number</span></td>
+                    <td><span>{{ employee.phoneNumber }}</span></td>
+                </tr>
+                <tr>
+                    <td><span jhiTranslate="soliqApp.employee.email">Email</span></td>
+                    <td><span>{{ employee.email }}</span></td>
+                </tr>
+                <tr>
+                    <td colspan="2" class="text-right">
+                        <button type="button"
+                                [routerLink]="['/employee', employee.id, 'edit']"
+                                class="btn btn-primary">
+                            <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+                    </td>
+                </tr>
+            </table>
 
-            <button type="submit"
-                    (click)="previousState()"
-                    class="btn btn-info">
-                <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
-            </button>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <td colspan="5">Маълумотлари</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let degree of employee.universities">
+                    <td>{{ degree.startYear }} - {{ degree.endYear }}</td>
+                    <td>{{ degree.institutionName }}</td>
+                    <td>{{ degree.discipline }}</td>
+                    <td>{{ degree.obtainedDegree }}</td>
+                    <td>
+                        <button type="submit"
+                                [routerLink]="['/academic-degree', degree.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
 
-            <button type="button"
-                    [routerLink]="['/employee', employee.id, 'edit']"
-                    class="btn btn-primary">
-                <fa-icon icon="pencil-alt"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit">Edit</span>
-            </button>
+                        <button type="submit" (click)="delete(degree)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon icon="times"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="text-right">
+                        <button type="submit"
+                                [routerLink]="['/academic-degree', employee.id, 'add']"
+                                class="btn btn-success">
+                            <span class="d-none d-md-inline" jhiTranslate="soliqApp.employee.add">Add</span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
+
+            <br/>
+            <table class="table table-striped table-bordered">
+                <thead>
+                <tr>
+                    <td colspan="4">Иш жойлари</td>
+                </tr>
+                </thead>
+                <tbody>
+                <tr *ngFor="let jobHistory of employee.employers">
+                    <td>{{ jobHistory.startYear }} - {{ jobHistory.endYear }}</td>
+                    <td>{{ jobHistory.employer }}</td>
+                    <td>{{ jobHistory.jobTitle }}</td>
+                    <td>
+                        <button type="submit"
+                                [routerLink]="['/job-history', jobHistory.id, 'edit']"
+                                class="btn btn-primary btn-sm">
+                            <fa-icon icon="pencil-alt"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.edit">Edit</span>
+                        </button>
+
+                        <button type="submit" (click)="deleteJob(jobHistory)"
+                                class="btn btn-danger btn-sm">
+                            <fa-icon icon="times"></fa-icon>
+                            <span class="d-none d-md-inline" jhiTranslate="entity.action.delete">Delete</span>
+                        </button>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="5" class="text-right">
+                        <button type="submit"
+                                [routerLink]="['/job-history', employee.id, 'add']"
+                                class="btn btn-success">
+                            <span class="d-none d-md-inline" jhiTranslate="soliqApp.employee.add">Add</span>
+                        </button>
+                    </td>
+                </tr>
+                </tbody>
+            </table>
         </div>
     </div>
 </div>

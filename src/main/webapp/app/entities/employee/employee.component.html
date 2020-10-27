@@ -24,11 +24,10 @@
                 <tr jhiSort [(predicate)]="predicate" [(ascending)]="ascending" [callback]="reset.bind(this)">
                     <th scope="col"  jhiSortBy="id"><span jhiTranslate="global.field.id">ID</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="fullName"><span jhiTranslate="soliqApp.employee.fullName">Full Name</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="soliqApp.employee.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="phoneNumber"><span jhiTranslate="soliqApp.employee.phoneNumber">Phone Number</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="birthday"><span jhiTranslate="soliqApp.employee.birthday">Birthday</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="phoneNumber"><span jhiTranslate="soliqApp.employee.phoneNumber">Phone Number</span> <fa-icon icon="sort"></fa-icon></th>
+                    <th scope="col"  jhiSortBy="email"><span jhiTranslate="soliqApp.employee.email">Email</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"  jhiSortBy="nation"><span jhiTranslate="soliqApp.employee.nation">Nation</span> <fa-icon icon="sort"></fa-icon></th>
-                    <th scope="col"  jhiSortBy="photo"><span jhiTranslate="soliqApp.employee.photo">Photo</span> <fa-icon icon="sort"></fa-icon></th>
                     <th scope="col"></th>
                 </tr>
             </thead>
@@ -36,16 +35,10 @@
                 <tr *ngFor="let employee of employees ;trackBy: trackId">
                     <td><a [routerLink]="['/employee', employee.id, 'view']">{{ employee.id }}</a></td>
                     <td>{{ employee.fullName }}</td>
-                    <td>{{ employee.email }}</td>
-                    <td>{{ employee.phoneNumber }}</td>
                     <td>{{ employee.birthday | date:'mediumDate' }}</td>
+                    <td>{{ employee.phoneNumber }}</td>
+                    <td>{{ employee.email }}</td>
                     <td>{{ employee.nation }}</td>
-                    <td>
-                        <a *ngIf="employee.photo" (click)="openFile(employee.photoContentType, employee.photo)">
-                            <img [src]="'data:' + employee.photoContentType + ';base64,' + employee.photo" style="max-height: 30px;" alt="employee image"/>
-                        </a>
-                        <span *ngIf="employee.photo">{{ employee.photoContentType }}, {{ byteSize(employee.photo) }}</span>
-                    </td>
                     <td class="text-right">
                         <div class="btn-group">
                             <button type="submit"

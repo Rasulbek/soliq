@@ -11,6 +11,7 @@ import { JobHistoryService } from './job-history.service';
 import { JobHistoryComponent } from './job-history.component';
 import { JobHistoryDetailComponent } from './job-history-detail.component';
 import { JobHistoryUpdateComponent } from './job-history-update.component';
+import { AcademicDegree } from '../../shared/model/academic-degree.model';
 
 @Injectable({ providedIn: 'root' })
 export class JobHistoryResolve implements Resolve<IJobHistory> {
@@ -29,6 +30,10 @@ export class JobHistoryResolve implements Resolve<IJobHistory> {
           }
         })
       );
+    }
+    const empid = route.params['empid'];
+    if (empid) {
+      return of(new JobHistory(undefined, undefined, undefined, undefined, undefined, empid));
     }
     return of(new JobHistory());
   }
@@ -71,6 +76,18 @@ export const jobHistoryRoute: Routes = [
   },
   {
     path: ':id/edit',
+    component: JobHistoryUpdateComponent,
+    resolve: {
+      jobHistory: JobHistoryResolve,
+    },
+    data: {
+      authorities: [Authority.USER],
+      pageTitle: 'soliqApp.jobHistory.home.title',
+    },
+    canActivate: [UserRouteAccessService],
+  },
+  {
+    path: ':empid/add',
     component: JobHistoryUpdateComponent,
     resolve: {
       jobHistory: JobHistoryResolve,

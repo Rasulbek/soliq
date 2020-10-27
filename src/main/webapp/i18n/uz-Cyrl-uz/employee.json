@@ -2,28 +2,29 @@
   "soliqApp": {
     "employee": {
       "home": {
-        "title": "Employees",
-        "createLabel": "Янги Employee қўшиш",
-        "createOrEditLabel": "Employeeни таҳрирлаш",
-        "notFound": "No Employees found"
+        "title": "Ҳодимлар",
+        "createLabel": "Янги ҳодим қўшиш",
+        "createOrEditLabel": "Ҳодим маълумотларини таҳрирлаш",
+        "notFound": "Ҳодимлар маълумотлари топилмади"
       },
-      "created": "Employee {{ param }} билан қўшилди.",
-      "updated": "{{ param }}- Employee сақланди.",
-      "deleted": "{{ param }}- Employee ўчирилди.",
+      "created": "Янги ҳодим {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Ҳодим сақланди.",
+      "deleted": "{{ param }}- Ҳодим ўчирилди.",
       "delete": {
-        "question": "{{ id }}- Employeeни ўчирмоқчимисиз? "
+        "question": "{{ id }}- Ҳодимни ўчирмоқчимисиз? "
       },
       "detail": {
-        "title": "Employee"
+        "title": "Ҳодим"
       },
-      "fullName": "Full Name",
+      "fullName": "Тўлиқ исми",
       "email": "Email",
-      "phoneNumber": "Phone Number",
-      "birthday": "Birthday",
-      "nation": "Nation",
-      "photo": "Photo",
-      "employer": "Employer",
-      "university": "University"
+      "phoneNumber": "Телефон рақами",
+      "birthday": "Туғилган куни",
+      "nation": "Миллати",
+      "photo": "Расм",
+      "employer": "Иш жойи",
+      "university": "Маълумоти",
+      "add": "+ Қўшиш"
     }
   }
 }

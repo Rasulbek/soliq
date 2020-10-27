@@ -2,9 +2,9 @@
   "soliqApp": {
     "Degree": {
       "null": "",
-      "ORTA": "ORTA",
-      "ORTAMAXSUS": "ORTAMAXSUS",
-      "OLIY": "OLIY"
+      "ORTA": "Ўрта",
+      "ORTAMAXSUS": "Ўрта махсус",
+      "OLIY": "Олий"
     }
   }
 }

@@ -2,26 +2,26 @@
   "soliqApp": {
     "academicDegree": {
       "home": {
-        "title": "Academic Degrees",
-        "createLabel": "Янги Academic Degree қўшиш",
-        "createOrEditLabel": "Academic Degreeни таҳрирлаш",
-        "notFound": "No Academic Degrees found"
+        "title": "Маълумот",
+        "createLabel": "Янги маълумот қўшиш",
+        "createOrEditLabel": "Маълумотни таҳрирлаш",
+        "notFound": "Маълумотлар топилмади"
       },
-      "created": "Academic Degree {{ param }} билан қўшилди.",
-      "updated": "{{ param }}- Academic Degree сақланди.",
-      "deleted": "{{ param }}- Academic Degree ўчирилди.",
+      "created": "Маълумот {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Маълумот сақланди.",
+      "deleted": "{{ param }}- Маълумот ўчирилди.",
       "delete": {
-        "question": "{{ id }}- Academic Degreeни ўчирмоқчимисиз? "
+        "question": "{{ id }}- Маълумотни ўчирмоқчимисиз? "
       },
       "detail": {
-        "title": "Academic Degree"
+        "title": "Маълумот"
       },
-      "institutionName": "Institution Name",
-      "discipline": "Discipline",
-      "startYear": "Start Year",
-      "endYear": "End Year",
-      "obtainedDegree": "Obtained Degree",
-      "employee": "Employee"
+      "institutionName": "Ўқув муассасаси",
+      "discipline": "Мутахассислиги",
+      "startYear": "Ўқишга кирган йили",
+      "endYear": "Битирган йили",
+      "obtainedDegree": "Маълумоти",
+      "employee": "Ходим"
     }
   }
 }

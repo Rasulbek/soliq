@@ -1,15 +1,18 @@
 package uz.soliq.anketa.service.dto;
 
-import java.time.LocalDate;
-import javax.validation.constraints.*;
-import java.io.Serializable;
 import javax.persistence.Lob;
+import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
+import java.io.Serializable;
+import java.time.LocalDate;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * A DTO for the {@link uz.soliq.anketa.domain.Employee} entity.
  */
 public class EmployeeDTO implements Serializable {
-    
+
     private Long id;
 
     @NotNull
@@ -26,12 +29,15 @@ public class EmployeeDTO implements Serializable {
     @NotNull
     private String nation;
 
-    
     @Lob
     private byte[] photo;
 
+    private Set<AcademicDegreeDTO> universities = new HashSet<>();
+
+    private Set<JobHistoryDTO> employers = new HashSet<>();
+
     private String photoContentType;
-    
+
     public Long getId() {
         return id;
     }
@@ -94,6 +100,22 @@ public class EmployeeDTO implements Serializable {
 
     public void setPhotoContentType(String photoContentType) {
         this.photoContentType = photoContentType;
+    }
+
+    public Set<AcademicDegreeDTO> getUniversities() {
+        return universities;
+    }
+
+    public void setUniversities(Set<AcademicDegreeDTO> universities) {
+        this.universities = universities;
+    }
+
+    public Set<JobHistoryDTO> getEmployers() {
+        return employers;
+    }
+
+    public void setEmployers(Set<JobHistoryDTO> employers) {
+        this.employers = employers;
     }
 
     @Override
