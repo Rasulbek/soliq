@@ -1,14 +1,24 @@
 <div class="row justify-content-center">
     <div class="col-8">
         <div *ngIf="employee">
-            <h2>
-                <button type="submit"
-                        (click)="previousState()"
-                        class="btn btn-info">
-                    <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
-                </button>
-                <span class="text-right" jhiTranslate="soliqApp.employee.detail.title">Employee</span> №{{ employee.id }}
-            </h2>
+            <div class="row">
+                <div class="col-2">
+                    <button type="submit"
+                            (click)="previousState()"
+                            class="btn btn-info">
+                        <fa-icon icon="arrow-left"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back">Back</span>
+                    </button>
+                </div>
+                <div class="col-8 text-center">
+                    <span class="h3" jhiTranslate="soliqApp.employee.detail.title">Employee</span> №{{ employee.id }}
+                </div>
+                <div class="col-2">
+                    <a href="javascript:;" class="btn btn-block btn-success"
+                    (click)="exportPdf();">
+                        <span jhiTranslate="soliqApp.employee.print">Print</span>
+                    </a>
+                </div>
+            </div>
 
             <hr>
 

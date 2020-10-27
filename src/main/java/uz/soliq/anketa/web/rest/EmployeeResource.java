@@ -1,6 +1,9 @@
 package uz.soliq.anketa.web.rest;
 
+import org.springframework.core.io.InputStreamResource;
+import org.springframework.http.MediaType;
 import uz.soliq.anketa.service.EmployeeService;
+import uz.soliq.anketa.service.PdfExportService;
 import uz.soliq.anketa.web.rest.errors.BadRequestAlertException;
 import uz.soliq.anketa.service.dto.EmployeeDTO;
 
@@ -13,12 +16,12 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.http.HttpHeaders;
-import org.springframework.http.HttpStatus;
 import org.springframework.web.servlet.support.ServletUriComponentsBuilder;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import javax.validation.Valid;
+import java.io.ByteArrayInputStream;
 import java.net.URI;
 import java.net.URISyntaxException;
 import java.util.List;
@@ -40,8 +43,11 @@ public class EmployeeResource {
 
     private final EmployeeService employeeService;
 
-    public EmployeeResource(EmployeeService employeeService) {
+    private final PdfExportService pdfExportService;
+
+    public EmployeeResource(EmployeeService employeeService, PdfExportService pdfExportService) {
         this.employeeService = employeeService;
+        this.pdfExportService = pdfExportService;
     }
 
     /**
@@ -122,5 +128,21 @@ public class EmployeeResource {
         log.debug("REST request to delete Employee : {}", id);
         employeeService.delete(id);
         return ResponseEntity.noContent().headers(HeaderUtil.createEntityDeletionAlert(applicationName, true, ENTITY_NAME, id.toString())).build();
+    }
+
+    @GetMapping("/employees/{id}/export")
+    public ResponseEntity<InputStreamResource> getEmployeesCV(@PathVariable Long id) {
+        log.debug("REST request to get CV for Employee : {}", id);
+        Optional<EmployeeDTO> employeeDTO = employeeService.findOne(id);
+        if (employeeDTO.isPresent()) {
+            ByteArrayInputStream byteArrayInputStream = pdfExportService.createCV(employeeDTO.get());
+            HttpHeaders httpHeaders = new HttpHeaders();
+            httpHeaders.add("Content-Disposition", "inline; Anketa_" + employeeDTO.get().getId() +".pdf");
+            return ResponseEntity.ok()
+                .headers(httpHeaders)
+                .contentType(MediaType.APPLICATION_PDF)
+                .body(new InputStreamResource(byteArrayInputStream));
+        }
+        return null;
     }
 }

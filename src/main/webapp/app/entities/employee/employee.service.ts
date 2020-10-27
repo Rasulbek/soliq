@@ -71,4 +71,8 @@ export class EmployeeService {
     }
     return res;
   }
+
+  exportPdf(id: number): Observable<Blob> {
+    return this.http.get(`${this.resourceUrl}/${id}/export`, { responseType: 'blob' });
+  }
 }

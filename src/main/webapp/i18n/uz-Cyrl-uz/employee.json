@@ -2,19 +2,19 @@
   "soliqApp": {
     "employee": {
       "home": {
-        "title": "Ҳодимлар",
-        "createLabel": "Янги ҳодим қўшиш",
-        "createOrEditLabel": "Ҳодим маълумотларини таҳрирлаш",
-        "notFound": "Ҳодимлар маълумотлари топилмади"
+        "title": "Ходимлар",
+        "createLabel": "Янги ходим қўшиш",
+        "createOrEditLabel": "Ходим маълумотларини таҳрирлаш",
+        "notFound": "Ходимлар маълумотлари топилмади"
       },
-      "created": "Янги ҳодим {{ param }} билан қўшилди.",
-      "updated": "{{ param }}- Ҳодим сақланди.",
-      "deleted": "{{ param }}- Ҳодим ўчирилди.",
+      "created": "Янги ходим {{ param }} билан қўшилди.",
+      "updated": "{{ param }}- Ходим сақланди.",
+      "deleted": "{{ param }}- Ходим ўчирилди.",
       "delete": {
-        "question": "{{ id }}- Ҳодимни ўчирмоқчимисиз? "
+        "question": "{{ id }}- Ходимни ўчирмоқчимисиз? "
       },
       "detail": {
-        "title": "Ҳодим"
+        "title": "Ходим"
       },
       "fullName": "Тўлиқ исми",
       "email": "Email",
@@ -24,7 +24,8 @@
       "photo": "Расм",
       "employer": "Иш жойи",
       "university": "Маълумоти",
-      "add": "Қўшиш"
+      "add": "Қўшиш",
+      "print": "Резюме"
     }
   }
 }
