@@ -11,12 +11,16 @@ qiymatlari o'zgartiriladi. Project birinchi marta run bo'layotganida Liquibase o
 
 Project run bo'lganida http://localhost:8080/ link orqali kiriladi. Login/parol: admin/admin.
 
-Asosiy sahifa
+1. Asosiy sahifa
+
 ![Asosiy sahifa](https://i.ibb.co/FgKRyS5/1.png)
-Xodim
+
+2. Xodim
+
 ![Xodim](https://i.ibb.co/7zcrRFW/2.png)
 
-**PDF export**
+**3. PDF export**
+
 ![PDF](https://i.ibb.co/ygDp0YR/Screen-Shot-2020-10-28-at-18-07-15.png)
 
 ---
