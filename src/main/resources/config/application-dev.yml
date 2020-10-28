@@ -37,7 +37,7 @@ spring:
       indent-output: true
   datasource:
     type: com.zaxxer.hikari.HikariDataSource
-    url: jdbc:postgresql://localhost:5432/soliq
+    url: jdbc:postgresql://localhost:5432/soliqdemoapp
     username: postgres
     password: postgres
     hikari:

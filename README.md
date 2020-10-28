@@ -2,9 +2,9 @@
 
 Assalomu alaykum.
 
-Web appni build qilish uchun PostgreSQL serverda `soliq` nomli database bo'lishi kerak.
+Web appni build qilish uchun PostgreSQL serverda `soliqdemoapp` nomli database bo'lishi kerak.
 Bu bazaga username: `postgres` password: `postgres` bo'lgan read/write access berilishi kerak.
-Agar qandaydir sabab bilan buni iloji bo'lmasa `src/main/resources/application.properties` fayldagi
+Agar qandaydir sabab bilan buni iloji bo'lmasa `src/main/resources/application-{dev/prod}.yml` fayldagi
 `spring.datasource.username=postgres`
 `spring.datasource.password=postgres`
 qiymatlari o'zgartiriladi. Project birinchi marta run bo'layotganida Liquibase orqali kerakli tablelarni migrate qiladi.
@@ -17,7 +17,7 @@ Xodim
 ![Xodim](https://i.ibb.co/7zcrRFW/2.png)
 
 **PDF export**
-![PDF](https://i.ibb.co/J5ksL5c/3.png)
+![PDF](https://i.ibb.co/ygDp0YR/Screen-Shot-2020-10-28-at-18-07-15.png)
 
 ---
 
