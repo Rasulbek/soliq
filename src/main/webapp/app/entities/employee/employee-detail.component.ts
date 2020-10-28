@@ -51,7 +51,8 @@ export class EmployeeDetailComponent implements OnInit {
   }
 
   exportPdf(): void {
-    this.employeeService.exportPdf(this.employee!.id!).subscribe(anketa => {
+    const userId = this.employee!.id!;
+    this.employeeService.exportPdf(userId).subscribe(anketa => {
       const blob = new Blob([anketa], { type: 'application/pdf' });
       if (window.navigator && window.navigator.msSaveOrOpenBlob) {
         window.navigator.msSaveOrOpenBlob(blob);
@@ -61,7 +62,7 @@ export class EmployeeDetailComponent implements OnInit {
       const data = window.URL.createObjectURL(blob);
       const link = document.createElement('a');
       link.href = data;
-      link.download = 'anketa.pdf';
+      link.download = 'anketa-' + userId + '.pdf';
       link.dispatchEvent(new MouseEvent('click', { bubbles: true, cancelable: true, view: window }));
 
       setTimeout(() => {

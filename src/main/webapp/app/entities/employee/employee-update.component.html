@@ -27,44 +27,50 @@
                     </div>
                 </div>
 
+                <div class="row">
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="soliqApp.employee.birthday" for="field_birthday">Birthday</label>
+                            <div class="input-group">
+                                <input id="field_birthday" type="text" class="form-control" name="birthday" ngbDatepicker #birthdayDp="ngbDatepicker" formControlName="birthday"/>
+                                <span class="input-group-append">
+                            <button type="button" class="btn btn-secondary" (click)="birthdayDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
+                        </span>
+                            </div>
+                            <div *ngIf="editForm.get('birthday')!.invalid && (editForm.get('birthday')!.dirty || editForm.get('birthday')!.touched)">
+                                <small class="form-text text-danger"
+                                       *ngIf="editForm.get('birthday')?.errors?.required" jhiTranslate="entity.validation.required">
+                                    This field is required.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="soliqApp.employee.phoneNumber" for="field_phoneNumber">Phone Number</label>
+                            <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
+                                   formControlName="phoneNumber"/>
+                        </div>
+                    </div>
+                    <div class="col-4">
+                        <div class="form-group">
+                            <label class="form-control-label" jhiTranslate="soliqApp.employee.nation" for="field_nation">Nation</label>
+                            <input type="text" class="form-control" name="nation" id="field_nation"
+                                   formControlName="nation"/>
+                            <div *ngIf="editForm.get('nation')!.invalid && (editForm.get('nation')!.dirty || editForm.get('nation')!.touched)">
+                                <small class="form-text text-danger"
+                                       *ngIf="editForm.get('nation')?.errors?.required" jhiTranslate="entity.validation.required">
+                                    This field is required.
+                                </small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
                 <div class="form-group">
                     <label class="form-control-label" jhiTranslate="soliqApp.employee.email" for="field_email">Email</label>
                     <input type="text" class="form-control" name="email" id="field_email"
                            formControlName="email"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="soliqApp.employee.phoneNumber" for="field_phoneNumber">Phone Number</label>
-                    <input type="text" class="form-control" name="phoneNumber" id="field_phoneNumber"
-                           formControlName="phoneNumber"/>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="soliqApp.employee.birthday" for="field_birthday">Birthday</label>
-                    <div class="input-group">
-                        <input id="field_birthday" type="text" class="form-control" name="birthday" ngbDatepicker #birthdayDp="ngbDatepicker" formControlName="birthday"/>
-                        <span class="input-group-append">
-                            <button type="button" class="btn btn-secondary" (click)="birthdayDp.toggle()"><fa-icon icon="calendar-alt"></fa-icon></button>
-                        </span>
-                    </div>
-                    <div *ngIf="editForm.get('birthday')!.invalid && (editForm.get('birthday')!.dirty || editForm.get('birthday')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('birthday')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
-                </div>
-
-                <div class="form-group">
-                    <label class="form-control-label" jhiTranslate="soliqApp.employee.nation" for="field_nation">Nation</label>
-                    <input type="text" class="form-control" name="nation" id="field_nation"
-                           formControlName="nation"/>
-                    <div *ngIf="editForm.get('nation')!.invalid && (editForm.get('nation')!.dirty || editForm.get('nation')!.touched)">
-                        <small class="form-text text-danger"
-                               *ngIf="editForm.get('nation')?.errors?.required" jhiTranslate="entity.validation.required">
-                        This field is required.
-                        </small>
-                    </div>
                 </div>
 
                 <div class="form-group">
